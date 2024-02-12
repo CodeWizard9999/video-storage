@@ -1,0 +1,47 @@
+{
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "babel-register": "^6.26.0",
+    "eslint": "^8.2.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jest": "^25.2.4",
+    "eslint-plugin-security": "^1.4.0",
+    "sequelize-cli": "^6.3.0"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "set-all-migrations": "npx sequelize-cli db:migrate",
+    "remove-all-migrations": "npx sequelize-cli db:migrate:undo:all",
+    "set-all-seeds": "npx sequelize-cli db:seed:all",
+    "remove-all-seeds": "npx sequelize-cli db:seed:undo",
+    "check-container-vulnerabilities": "snyk auth && snyk container test : --file=Dockerfile"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.1029.0",
+    "axios": "^0.24.0",
+    "bcrypt": "^5.0.1",
+    "dotenv": "^10.0.0",
+    "eslint-config-airbnb": "^19.0.0",
+    "joi": "^17.4.2",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.21",
+    "lodash-contrib": "^4.1200.1",
+    "multer": "^1.4.3",
+    "multer-s3": "^2.10.0",
+    "nodemon": "^2.0.15",
+    "pg": "^8.7.1",
+    "pg-hstore": "^2.3.4",
+    "pino": "^7.2.0",
+    "pino-pretty": "^7.2.0",
+    "restify": "^8.6.0",
+    "restify-cookies": "^0.2.4",
+    "restify-cors-middleware": "^1.1.1",
+    "restify-router": "^0.6.2",
+    "sequelize": "^6.9.0",
+    "sequelize-auto-migrations-v2": "^1.1.0",
+    "swagger-jsdoc": "^6.1.0",
+    "swagger-ui-restify": "^3.0.8",
+    "uuid": "^8.3.2"
+  }
+}

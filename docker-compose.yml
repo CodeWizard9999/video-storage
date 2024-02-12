@@ -1,0 +1,25 @@
+version: "3.9"
+
+services:
+  node-app:
+    build: ./
+    container_name: docker-node-psql
+    volumes:
+      - ./:/usr/src/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      - DB_PASSWORD=password
+  db:
+    image: postgres
+    privileged: true
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_USER: postgres
+      POSTGRES_DB: video-storage-db
+    volumes:
+      - ./databases/postgres:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"

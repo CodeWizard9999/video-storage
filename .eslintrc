@@ -1,0 +1,30 @@
+{
+  "plugins": [
+    "security"
+  ],
+  "extends": [
+    "airbnb-base",
+    "plugin:security/recommended"
+  ],
+  "env": {
+    "es6": true,
+    "node": true,
+    "jest": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "rules": {
+    "comma-dangle": "off",
+    "no-console": "off",
+    "max-len": [
+      "warn",
+      140
+    ],
+    "object-shorthand": "off",
+    "object-curly-newline": "off",
+    "prefer-regex-literals": [0],
+    "max-classes-per-file": [0]
+  }
+}

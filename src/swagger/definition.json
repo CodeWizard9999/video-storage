@@ -1,0 +1,311 @@
+{
+ "Error": {
+   "type": "object",
+   "required": [
+     "code",
+     "error"
+   ],
+   "properties": {
+     "code": {
+       "type": "string",
+       "description": "Code of the error"
+     },
+     "error": {
+       "type": "string",
+       "description": "message of the error"
+     }
+   },
+   "example": {
+     "code": "DATABASE_ERROR",
+     "error": "user not found"
+   }
+ },
+ "UserSchema": {
+   "type": "object",
+   "required": [
+     "id",
+     "login",
+     "email",
+     "confirmed",
+     "roleId"
+   ],
+   "properties": {
+     "id": {
+       "type": "number",
+       "description": "The auto-incremented id of the user"
+     },
+     "login": {
+       "type": "string",
+       "description": "User login"
+     },
+     "email": {
+       "type": "string",
+       "description": "User email"
+     },
+     "confirmed": {
+       "type": "boolean",
+       "description": "Is it confirmed user"
+     },
+     "roleId": {
+       "type": "number",
+       "description": "Id of user role"
+     }
+   },
+   "example": {
+     "id": 1,
+     "login": "testLogin2",
+     "email": "test@test2.com",
+     "confirmed": false,
+     "roleId": 2
+   }
+ },
+  "UserSchemaWithAccessToken": {
+    "type": "object",
+    "required": [
+      "id",
+      "login",
+      "email",
+      "confirmed",
+      "roleId",
+      "accessToken"
+    ],
+    "properties": {
+      "id": {
+        "type": "number",
+        "description": "The auto-incremented id of the user"
+      },
+      "login": {
+        "type": "string",
+        "description": "User login"
+      },
+      "email": {
+        "type": "string",
+        "description": "User email"
+      },
+      "confirmed": {
+        "type": "boolean",
+        "description": "Is it confirmed user"
+      },
+      "roleId": {
+        "type": "number",
+        "description": "Id of user role"
+      },
+      "accessToken": {
+        "type": "string",
+        "description": "User access token"
+      }
+    },
+    "example": {
+      "id": 1,
+      "login": "testLogin2",
+      "email": "test@test2.com",
+      "confirmed": false,
+      "roleId": 2,
+      "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb25maXJtZWQiOmZhbHNlLCJpZCI6MiwiZW1haWwiOiJ0ZXN0QHRlc3QyLmNvbSIsImxvZ2luIjoidGVzdExvZ2luMiIsInJvbGVJZCI6MiwiaWF0IjoxNjM5MDUxMTIwLCJleHAiOjE2MzkwNTQ3MjB9.gVVPTlcOAjHTwO7ERAYomDdT0VvgpIgmicHxsiJVXRQ"
+    }
+  },
+  "UserPayloadSchema": {
+    "type": "object",
+    "required": [
+      "login",
+      "email",
+      "password",
+      "roleName"
+    ],
+    "properties": {
+      "login": {
+        "type": "string",
+        "description": "User login"
+      },
+      "email": {
+        "type": "string",
+        "description": "User email"
+      },
+      "password": {
+        "type": "string",
+        "description": "User password"
+      },
+      "roleName": {
+        "type": "string",
+        "description": "User role name"
+      }
+    },
+    "example": {
+      "email": "test@test2.com",
+      "login": "testLogin2",
+      "password": "testPassword",
+      "roleName": "admin"
+    }
+  },
+  "UserLoginPayloadSchema": {
+    "type": "object",
+    "required": [
+      "email",
+      "password"
+    ],
+    "properties": {
+      "email": {
+        "type": "string",
+        "description": "User email"
+      },
+      "password": {
+        "type": "string",
+        "description": "User password"
+      }
+    },
+    "example": {
+      "email": "test@test2.com",
+      "password": "testPassword"
+    }
+  },
+  "RefreshTokenSchema": {
+    "type": "object",
+    "required": [
+      "id",
+      "refreshToken",
+      "userId"
+    ],
+    "properties": {
+      "id": {
+        "type": "string",
+        "description": "Token id"
+      },
+      "refreshToken": {
+        "type": "string",
+        "description": "Refresh token value"
+      },
+      "userId": {
+        "type": "string",
+        "description": "User id"
+      }
+    },
+    "example": {
+      "id": 1,
+      "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb25maXJtZWQiOmZhbHNlLCJpZCI6MSwiZW1haWwiOiJ0ZXN0QHRlc3QuY29tIiwibG9naW4iOiJ0ZXN0TG9naW4yIiwicm9sZUlkIjoyLCJpYXQiOjE2MzkwNTE3NDMsImV4cCI6MTYzOTY1NjU0M30.CHFecmg1TgR4uQKxsH5jNVgyXwxPUzgiwHZg3ms-E_M",
+      "userId": 1
+    }
+  },
+  "VideoSchema": {
+    "type": "object",
+    "required": [
+      "id",
+      "videoTitle",
+      "videoDescription",
+      "videoUrl",
+      "userId",
+      "key"
+    ],
+    "properties": {
+      "id": {
+        "type": "string",
+        "description": "Token id"
+      },
+      "videoTitle": {
+        "type": "string",
+        "description": "Title of video"
+      },
+      "videoDescription": {
+        "type": "string",
+        "description": "Description of video"
+      },
+      "videoUrl": {
+        "type": "string",
+        "description": "Url of video"
+      },
+      "userId": {
+        "type": "string",
+        "description": "User id of video"
+      },
+      "key": {
+        "type": "string",
+        "description": "Key id of video"
+      }
+    },
+    "example": {
+      "id": 1,
+      "videoTitle": "test",
+      "videoDescription": "test description",
+      "videoUrl": "https://video-links-storage.s3.eu-north-1.amazonaws.com/51ce5591-31c5-47cc-9215-b2dd349aa249_videoplayback.mp4",
+      "userId": 1,
+      "key": "51ce5591-31c5-47cc-9215-b2dd349aa249_videoplayback.mp4"
+    }
+  },
+  "VideosPaginationSchema": {
+    "type": "object",
+    "required": [
+      "total",
+      "pagination",
+      "data"
+    ],
+    "properties": {
+      "total": {
+        "type": "number",
+        "description": "total quantity of rides"
+      },
+      "pagination": {
+        "description": "pagination info",
+        "type": "object",
+        "properties": {
+          "next": {
+            "type": "object",
+            "description": "next page number and size",
+            "properties": {
+              "number": {
+                "type": "number",
+                "description": "number of next page"
+              },
+              "size": {
+                "type": "number",
+                "description": "quantity of rides per page"
+              }
+            }
+          },
+          "prev": {
+            "type": "object",
+            "description": "next page number and size",
+            "properties": {
+              "number": {
+                "type": "number",
+                "description": "number of prev page"
+              },
+              "size": {
+                "type": "number",
+                "description": "quantity of previous or next videos"
+              }
+            }
+          }
+        }
+      },
+      "data": {
+        "description": "list of videos viewed on current page",
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/VideoSchema"
+        }
+      }
+    },
+    "example": {
+      "total": 40,
+      "pagination": {
+        "next": {
+          "number": 3,
+          "size": 14
+        },
+        "prev": {
+          "number": 1,
+          "size": 19
+        }
+      },
+      "data": [
+        {
+          "id": 15,
+          "videoTitle": "test",
+          "videoDescription": "test description",
+          "videoUrl": "https://video-links-storage.s3.eu-north-1.amazonaws.com/51ce5591-31c5-47cc-9215-b2dd349aa249_videoplayback.mp4",
+          "userId": 1,
+          "key": "51ce5591-31c5-47cc-9215-b2dd349aa249_videoplayback.mp4"
+        }
+      ]
+    }
+  }
+}
